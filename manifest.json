@@ -1,0 +1,100 @@
+{
+  "manifest_version": 2,
+  "name": "vRevamp",
+  "version": "4.5.20",
+  "description": "Enhancing the better way to use VTOP",
+  "author": "sanjay7178.github.io",
+  
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "vrevamp@example.com"
+    }
+  },
+
+  "browser_action": {
+    "default_popup": "html/popup.html"
+  },
+
+  "background": {
+    "scripts": ["service_worker/background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://web.vitap.ac.in/*",
+        "*://vtop.vitap.ac.in/*",
+        "*://vtopcc.vit.ac.in/vtop/*",
+        "*://vtop.vitap.ac.in/*",
+        "*://vtop.vitap.ac.in/vtop/*"
+      ],
+      "css": ["css/table.css", "css/nav-custom-div.css"],
+      "js": [
+        "js/modules/dom-to-image.js",
+        "js/utils/chooseCurrentSem.js",
+        "js/utils/filterRepeated.js",
+        "js/store/store.js",
+        "js/store/saveTimeTableDetails.js",
+        "js/store/saveMarksPage.js",
+        "js/store/saveExamSchedulePage.js",
+        "js/store/saveAttendancePage.js",
+        "js/outing/store.js",
+        "js/showOfflineIcon.js",
+        "js/timetable/createTimeTable.js",
+        "js/timetable/parsersTimeTable.js",
+        "js/timetable/timetable.js",
+        "js/attendance.js",
+        "js/marks_page.js",
+        "js/course_page.js",
+        "js/da_upload.js",
+        "js/captcha/bitmaps.js",
+        "js/captcha/captchaparser.js",
+        "js/exam_schedule.js",
+        "js/navbarcc.js",
+        "js/navbarap.js",
+        "js/popup.js",
+        "js/grade_pags.js",
+        "js/faculty.js",
+        "js/weekend_outing.js",
+        "js/privacy-policy/script.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://vtop.vitap.ac.in/vtop/login"
+      ],
+      "js": [
+        "js/captcha/refreshTillCaptcha.js"
+      ]
+    }
+  ],
+
+  "permissions": [
+    "*://vtop.vit.ac.in/*",
+    "*://vtopcc.vit.ac.in/vtop/*",
+    "*://vtop.vitap.ac.in/*",
+    "*://vtop.vitap.ac.in/vtop/*",
+    "webRequest",
+    "downloads",
+    "storage",
+    "tabs",
+    "identity",
+    "alarms"
+  ],
+
+  "icons": {
+    "16": "assets/icons/img_16_square.png",
+    "48": "assets/icons/img_48_square.png",
+    "128": "assets/icons/img_128_square.png"
+  },
+
+  "oauth2": {
+    "client_id": "102739538495-lqud9ruvqs4a6jug1fada5h9uu9acpmk.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/calendar"]
+  },
+
+  "web_accessible_resources": [
+    "js/captcha/weights.json"
+  ]
+}
