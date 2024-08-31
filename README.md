@@ -1,0 +1,1 @@
+# vRevamp-firefox-addon
