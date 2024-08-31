@@ -29,8 +29,21 @@ You can see your semester's grades and weighting immediately on the marks page, 
 Find an issue with this extension? Fix it on GitHub (https://github.com/sanjay7178/vRevamp)
 Read less
 
-## Chrome Extension
-you can find out the chrome extension at [vRevamp](https://chrome.google.com/webstore/detail/vrevamp/jfmlhhjlkbliphgkmeingeacbijcilcl)
+## Contributing Instructions 
+- for development git clone this repository
+```bash
+git clone https://github.com/sanjay7178/vRevamp-firefox-addon
+cd vRevamp-firefox-addon
+```
+- install `web-ext` npm package globally
+```bash
+npm install --global web-ext
+```
+- Test out the addon
+```bash
+web-ext run --verbose
+```
+for more instructions on using `web-ext` check out : https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/
 ## Privacy Policy
 you can find out the privacy policy at [link](https://vrevamp.nullchapter.tech/privacy-policy)
 Hi
